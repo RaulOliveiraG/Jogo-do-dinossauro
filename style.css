@@ -1,0 +1,124 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.game-board{
+    width: 100%;
+    height: 750px;
+    border-bottom: 40px solid #013a07;
+    position: relative;/*para q tudo respeite a delimitação do quadro*/
+    overflow: hidden;/*tudo que estiver fora do tabuleiro não vai aparecer*/
+    background: linear-gradient(#b0bdf1, #E0F6FF)
+}
+
+.cactocls{
+    position: absolute;/*para que uma imagem não interfira na outra*/
+    bottom:-12px;/*para fixar a imagem em baixo*/
+    width: 150px;
+    animation: cacto/*nome da animação*/ 1.7s/*tempo*/ infinite/*infinita*/ linear/*constante*/;
+}
+
+@keyframes cacto {
+    from{/*onde começa*/
+        right: -150px;/*-100 px pra imagem começar fora da tela*/
+    }
+    to{/*onde termina*/
+        right: 100%;
+    }
+}
+
+.dinossauro{
+    left: 5%;
+    position: absolute;/*para que uma imagem não interfira na outra*/
+    bottom:-10px;/*para fixar a imagem em baixo*/
+    width: 150px;
+    
+}
+.pula{/*o mario so vai pular quando essa class for ativada(feito em js)*/
+    animation: pula/*nome da animação*/ 500ms/*tempo de duração*/ ease-out/*0-50 rapido 50-100 suave*/;
+}
+
+@keyframes pula {
+    0%{/* no inicio(0%) da animação vai estar assim*/
+        bottom: 0;
+    }
+    40%{/*ele ja tem que estar no alto para ficar um tempinho lá*/
+        bottom: 200px;
+    }
+    50%{/* no meio(50%) da animação vai estar assim*/
+        bottom: 200px;
+    }
+    70%{/*ele ainda tem que estar no alto para ficar um tempinho lá*/
+        bottom: 200px;
+    }
+
+    100%{/* no fim(100%) da animação vai estar assim*/
+        bottom: 0;
+    }
+}
+
+.nuvens{
+    
+    position: absolute;/*para que uma imagem não interfira na outra*/
+    width: 850px;
+    animation: nuvens/*nome da animação*/ 10s/*tempo*/ infinite/*infinita*/ linear/*constante*/;
+}
+
+@keyframes nuvens {
+    from{/*onde começa*/
+        right: -850px;/*-100 px pra imagem começar fora da tela*/
+    }
+    to{/*onde termina*/
+        right: 100%;
+    }
+}
+
+.nuvens1{
+    
+    position: absolute;/*para que uma imagem não interfira na outra*/
+    width: 850px;
+    animation: nuvens1/*nome da animação*/ 13s/*tempo*/ infinite/*infinita*/ linear/*constante*/;
+}
+
+@keyframes nuvens1 {
+    from{/*onde começa*/
+        right: -1700px;/*-100 px pra imagem começar fora da tela*/
+    }
+    to{/*onde termina*/
+        right: 100%;
+    }
+}
+
+.nuvens2{
+    
+    position: absolute;/*para que uma imagem não interfira na outra*/
+    width: 850px;
+    animation: nuvens2/*nome da animação*/ 15s/*tempo*/ infinite/*infinita*/ linear/*constante*/;
+}
+
+@keyframes nuvens2 {
+    from{/*onde começa*/
+        right: -2550px;/*-100 px pra imagem começar fora da tela*/
+    }
+    to{/*onde termina*/
+        right: 100%;
+    }
+}
+
+.nuvens3{
+    
+    position: absolute;/*para que uma imagem não interfira na outra*/
+    width: 850px;
+    animation: nuvens3/*nome da animação*/ 18s/*tempo*/ infinite/*infinita*/ linear/*constante*/;
+}
+
+@keyframes nuvens3 {
+    from{/*onde começa*/
+        right: -3400px;/*-100 px pra imagem começar fora da tela*/
+    }
+    to{/*onde termina*/
+        right: 100%;
+    }
+}

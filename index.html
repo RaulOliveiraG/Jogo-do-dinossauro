@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Jogo do dinossauro</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body">
+        <div class="game-board">
+            <img src="imagens/cacto.png" alt="cacto" class="cactocls">
+            <img src="imagens/Dinossauro vivo.png" alt="dinossauro" class="dinossauro">
+            <img src="imagens/istockphoto-1176372761-612x612-removebg-preview.png" alt="nuvens" class="nuvens">
+            <img src="imagens/istockphoto-1176372761-612x612-removebg-preview.png" alt="nuvens" class="nuvens1">
+            <img src="imagens/istockphoto-1176372761-612x612-removebg-preview.png" alt="nuvens" class="nuvens2">
+            <img src="imagens/istockphoto-1176372761-612x612-removebg-preview.png" alt="nuvens" class="nuvens3">
+        </div>
+        <script>
+                const dinossauro = document.querySelector('.dinossauro');     
+                // cria uma constante que passa um seletor pelo documento que detecta a div class ".dinossauro"
+                const cacto = document.querySelector('.cactocls');  
+                // cria uma constante que passa um seletor para detectar a div class".cacto"
+                const pula = () => {//função pula
+                    dinossauro.classList.add('pula');
+                        //adiciona a constante dinossauro uma div class do documento denominada"pula" 
+                    setTimeout(()=> {//determina um tempo para executar determinada coisa
+
+                            dinossauro.classList.remove('pula');
+                           // depois que a função pula é executada ela precisa ser removida para ser executada denovo
+                        
+                        },500);//tempo para coisa ser executada(nesse caso o tempo para a animaçao acabar[500 ms])
+                                    }
+
+                const loop = setInterval(()=>{//determina um intervalo para executar algo
+                        const cactoposition = cacto.offsetLeft;//escaneia o deslocamento esquerdo
+                        const sigmaposition = +window.getComputedStyle(dinossauro).bottom.replace('px','');
+                        //pega o estilo que foi computado na constante dinossauro e filtra apenas para pegar o bottom
+                        //(o bottom é coletado de fotma diferente por que não existe um offsetbottom assim como o offsetleft)
+                        //o mais antes de window serve para transformar a informação que esta sendo coletada em numero se possivel
+                        // e o replace, é por que a informação coletada vem com a unidade de medida, e a gente não precisa disso
+                            if(cactoposition <= 138 && cactoposition > 0 && sigmaposition < 136){
+                                //se a posição do cacto e do siigma for essa:
+                                cacto.style.animation = 'none';//animação para
+                                cacto.style.left = `${cactoposition}px`;// faz o dinossauro parar na posição que ele estiver na hora
+                                
+                                dinossauro.style.animation = 'none';//animação para
+                                dinossauro.style.bottom = `${sigmaposition}px`;// faz o dinossauro parar na posição que ele estiver na hora
+                                dinossauro.src='imagens/Game_Over.png';
+                                dinossauro.style.width ='100px';
+                                dinossauro.style.margin ='15px';
+                                //dinossauro.style... serve para alterar o css daqui do js.
+                                
+                                clearInterval(loop)// acaba a tag que a gente criou de looping, pois nao precisa verificar mais
+                            }
+
+                        },10)//a cada 10 ms ele vai verificar a position do cacto
+
+                    document.addEventListener('keydown', pula);
+                    //adicionador de eventos, nesse caso adiciona um evento para ativar a função "pula" quando abiaxar a tecla
+        </script>
+    </body>
+</html>
