@@ -34,7 +34,7 @@
     position: absolute;/*para que uma imagem não interfira na outra*/
     bottom:-10px;/*para fixar a imagem em baixo*/
     width: 150px;
-    
+    z-index: 2;
 }
 .pula{/*o mario so vai pular quando essa class for ativada(feito em js)*/
     animation: pula/*nome da animação*/ 500ms/*tempo de duração*/ ease-out/*0-50 rapido 50-100 suave*/;
@@ -64,6 +64,7 @@
     position: absolute;/*para que uma imagem não interfira na outra*/
     width: 850px;
     animation: nuvens/*nome da animação*/ 10s/*tempo*/ infinite/*infinita*/ linear/*constante*/;
+    z-index: 1;
 }
 
 @keyframes nuvens {
@@ -80,6 +81,7 @@
     position: absolute;/*para que uma imagem não interfira na outra*/
     width: 850px;
     animation: nuvens1/*nome da animação*/ 13s/*tempo*/ infinite/*infinita*/ linear/*constante*/;
+    z-index: 1;
 }
 
 @keyframes nuvens1 {
@@ -96,6 +98,7 @@
     position: absolute;/*para que uma imagem não interfira na outra*/
     width: 850px;
     animation: nuvens2/*nome da animação*/ 15s/*tempo*/ infinite/*infinita*/ linear/*constante*/;
+    z-index: 1;
 }
 
 @keyframes nuvens2 {
@@ -112,6 +115,7 @@
     position: absolute;/*para que uma imagem não interfira na outra*/
     width: 850px;
     animation: nuvens3/*nome da animação*/ 18s/*tempo*/ infinite/*infinita*/ linear/*constante*/;
+    z-index: 1;
 }
 
 @keyframes nuvens3 {
